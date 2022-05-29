@@ -12,11 +12,11 @@ terraform {
     }
   }
 
-  backend "gcs" {}
+  #backend "gcs" {}
 }
 
 provider "google" {
-  credentials_file		= file("${var.credentials_file}")
+  credentials			= file("${var.credentials_file}")
   project			= "${var.project}"
   region			= "${var.region}"
 }
@@ -26,25 +26,25 @@ provider "google" {
 #
 
 module "vpc" {
-  source			= "../../modules/vpc"
+  source			= "../../../modules/vpc"
   project			= "${var.project}"
   region			= "${var.region}"
   vpc				= "${var.vpc}"
 }
 
 module "firewall" {
-  source			= "../../modules/firewall"
+  source			= "../../../modules/firewall"
   vpc_id			= module.vpc.google_compute_network_vpc
   jumphost_in			= "${var.jumphost_in}"
 }
 
 module "jumphost" {
-  source			= "../../modules/jumphost"
+  source			= "../../../modules/jumphost"
   subnet_jumphost		= module.vpc.google_compute_subnetwork_jumphost
 }
 
 module "compute" {
-  source			= "../../modules/compute"
+  source			= "../../../modules/compute"
   subnet_a			= module.vpc.google_compute_subnetwork_a
   subnet_b			= module.vpc.google_compute_subnetwork_b
   subnet_c			= module.vpc.google_compute_subnetwork_c

@@ -36,7 +36,7 @@ resource "google_compute_instance" "instance_" {
   }
 
   network_interface {
-    subnetwork				= "${each.value.subnet == "a" ? "${var.subnet_a}" : (each.value.subnet == "b" "${var.subnet_a}" : "{var.subnet_c}")}"
+    subnetwork				= "${each.value.subnet == "a" ? "${var.subnet_a}" : (each.value.subnet == "b" ? "${var.subnet_b}" : "${var.subnet_c}")}"
   }
 
   metadata_startup_script		= file("${path.module}/../files/compute-cloud-init.sh")

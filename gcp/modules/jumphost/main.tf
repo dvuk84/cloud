@@ -22,7 +22,7 @@ resource "google_compute_instance" "jumphost" {
 
     access_config {
       network_tier		= "STANDARD"
-      nat_ip			= google_compute_address.jumphost_static_ip.address
+      #nat_ip			= google_compute_address.jumphost_static_ip.address
     }
   }
 

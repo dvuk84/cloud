@@ -2,10 +2,6 @@
 # PASS-ON VARS
 #
 
-variable "subnet_jumphost" {
-  default = "blank"
-}
-
 variable "vpc_id" {
   default = "blank"
 }
@@ -20,6 +16,10 @@ variable "subnet_b" {
 
 variable "subnet_c" {
   default = "blank"
+}
+
+variable "credentials_file" {
+  default = ""
 }
 
 #
@@ -69,6 +69,27 @@ variable "subnet_c_cidr" {
 variable "subnet_jumphost" {
   default = "10.100.0.0/24"
 }
+
+#
+# REGION
+#
+
+variable "subnet_a_region" {
+  default = "us-central1"
+}
+
+variable "subnet_b_region" {
+  default = "us-central1"
+}
+
+variable "subnet_c_region" {
+  default = "us-central1"
+}
+
+variable "subnet_jumphost_region" {
+  default = "us-central1"
+}
+
 
 #
 # JUMPHOST
