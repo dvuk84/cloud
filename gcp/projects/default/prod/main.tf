@@ -12,7 +12,7 @@ terraform {
     }
   }
 
-  #backend "gcs" {}
+  backend "gcs" {}
 }
 
 provider "google" {
