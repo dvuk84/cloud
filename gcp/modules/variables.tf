@@ -3,19 +3,19 @@
 #
 
 variable "vpc_id" {
-  default = "blank"
+  default = ""
 }
 
 variable "subnet_a" {
-  default = "blank"
+  default = ""
 }
 
 variable "subnet_b" {
-  default = "blank"
+  default = ""
 }
 
 variable "subnet_c" {
-  default = "blank"
+  default = ""
 }
 
 variable "credentials_file" {
