@@ -3,7 +3,7 @@
 #
 
 project				= ""
-vpc				= "vpc-network-1-testing"
+vpc				= "vpc-network-1"
 region				= "us-central1"
 team				= "infrastructure"
 environment			= "testing"
